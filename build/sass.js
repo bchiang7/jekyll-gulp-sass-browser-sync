@@ -13,10 +13,13 @@ module.exports = gulp => {
       includePaths: ['scss'],
       outputStyle: 'expanded'
     }))
-    .pipe(prefix(['last 15 versions'], {cascade: true}))
+    .pipe(prefix({
+      browsers: [ 'last 2 versions' ],
+      cascade: false
+    }))
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest( destPath ))
-    .pipe(gulp.dest('css'));
+    .pipe(gulp.dest( 'css' ));
   });
 
 }

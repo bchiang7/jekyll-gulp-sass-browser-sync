@@ -8,17 +8,12 @@ email:
 social:
   - title: email
     url:
+  - title: facebook
+    url:
   - title: twitter
     url:
   - title: instagram
     url:
-  - title: codepen
-    url:
-  - title: github
-    url:
-  - title: linkedin
-    url:
-
 # Build settings
 markdown: kramdown
 

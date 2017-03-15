@@ -8,6 +8,7 @@ const destPath = '_site/js';
 module.exports = gulp => {
 
   gulp.task('scripts', () => {
+    console.log('scripts -----------------------');
     return gulp.src( jsPath )
     .pipe(jshint())
     .pipe(babel({

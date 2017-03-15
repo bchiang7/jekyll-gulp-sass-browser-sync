@@ -5,7 +5,7 @@ const jekyll       = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
 const scssPath     = ['_scss/**/*.scss'];
 const jsPath       = ['_scripts/*.js'];
-const templatePath = [ '**/*.html', '**/*.yml', '_posts/*', '_drafts/*'];
+const templatePath = [ '+(_includes|_layouts)/*.html', '_data/*.yml', '_posts/*'];
 
 module.exports = gulp => {
 
@@ -27,8 +27,8 @@ module.exports = gulp => {
       }
     });
 
-    gulp.watch(scssPath, ['sass', 'jekyll-rebuild']);
-    gulp.watch(jsPath, ['scripts', 'jekyll-rebuild']);
+    gulp.watch(scssPath, ['sass', browserSync.reload]);
+    gulp.watch(jsPath, ['scripts', browserSync.reload]);
     gulp.watch(templatePath, ['jekyll-rebuild']);
   });
 
