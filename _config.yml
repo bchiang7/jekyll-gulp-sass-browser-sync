@@ -1,4 +1,38 @@
-name: Your New Jekyll Site
-markdown: redcarpet
-highlighter: pygments # or rouge or null
-exclude: ["node_modules", "gulpfile.js", "package.json"]
+# Site settings
+name: Name
+title: Title
+description: Description
+url: http://google.com
+baseurl: ""
+email:
+social:
+  - title: email
+    url:
+  - title: twitter
+    url:
+  - title: instagram
+    url:
+  - title: codepen
+    url:
+  - title: github
+    url:
+  - title: linkedin
+    url:
+
+# Build settings
+markdown: kramdown
+
+exclude:
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "*.gemspec"
+  - "README.md"
+  - "node_modules"
+  - "build"
+  - "gulpfile.js"
+  - "package.json"
+
+keep_files:
+  - "CNAME"
+  - ".git"
+  - ".gitignore"
