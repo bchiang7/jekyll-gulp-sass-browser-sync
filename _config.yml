@@ -1,7 +1,7 @@
 # Site settings
-name: Name
-title: Title
-description: Description
+name: Patrick Star
+title: Patrick Star's Site
+description: Wumbo
 url: http://google.com
 baseurl: ""
 email:
@@ -14,6 +14,7 @@ social:
     url:
   - title: instagram
     url:
+
 # Build settings
 markdown: kramdown
 
