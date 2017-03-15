@@ -1,7 +1,7 @@
-jekyll-gulp-sass-browser-sync
+Jekyll & Gulp Template
 =============================
 
-A starter project including full setup for Jekyll, GulpJS, SASS, AutoPrefixer &amp; BrowserSync
+A starter project including full setup for Jekyll, Gulp, SASS, Autoprefixer &amp; BrowserSync
 
 Here's a 1.5min [screencast](http://quick.as/pvrslgx) showing what you get.
 
@@ -24,15 +24,21 @@ To use this starter project, you'll need the following things installed on your 
 
 ## Usage
 
-**development mode**
+**Development mode**
 
 This will give you file watching, browser synchronisation, auto-rebuild, CSS injecting etc etc.
 
 ```shell
-$ gulp
+$ gulp serve
 ```
 
-**jekyll**
+**Production mode**
+
+```shell
+$ gulp build
+```
+
+**Jekyll**
 
 As this is just a Jekyll project, you can use any of the commands listed in their [docs](http://jekyllrb.com/docs/usage/)
 
