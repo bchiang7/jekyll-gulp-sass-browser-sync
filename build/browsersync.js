@@ -3,33 +3,33 @@ const cp           = require('child_process');
 
 const jekyll       = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
 
-const scssPath     = ['_scss/**/*.scss'];
-const jsPath       = ['_scripts/*.js'];
-const templatePath = [ '+(_includes|_layouts)/*.html', '_data/*.yml', '_posts/*'];
+const scssPath     = '_scss/**/*.scss';
+const jsPath       = '_scripts/*.js';
+const templatePath = [ '*.html', '+(_includes|_layouts)/*.html', '*.yml', '_data/*.yml', '_posts/*' ];
 
 module.exports = gulp => {
 
   // run `jekyll build`
-  gulp.task('jekyll-build', done => {
+  gulp.task( 'jekyll-build', done => {
     return cp.spawn( jekyll , ['build'], {stdio: 'inherit'})
     .on('close', done);
   });
 
   // Rebuild Jekyll then reload the page
-  gulp.task('jekyll-rebuild', ['jekyll-build'], () => {
+  gulp.task( 'jekyll-rebuild', ['jekyll-build'], () => {
     browserSync.reload();
   });
 
-  gulp.task('serve', ['jekyll-build'], () => {
+  gulp.task( 'serve', ['jekyll-build'], () => {
     browserSync.init({
       server: {
         baseDir: '_site'
       }
     });
 
-    gulp.watch(scssPath, ['sass', browserSync.reload]);
-    gulp.watch(jsPath, ['scripts', browserSync.reload]);
-    gulp.watch(templatePath, ['jekyll-rebuild']);
+    gulp.watch( scssPath, [ 'sass', browserSync.reload ] );
+    gulp.watch( jsPath, [ 'scripts', browserSync.reload ] );
+    gulp.watch( templatePath, [ 'jekyll-rebuild' ] );
   });
 
 }
